@@ -28,6 +28,18 @@ INSTALLED_APPS = [
 
     # new
     'shop.apps.ShopConfig',
+    'cart.apps.CartConfig',
+    'orders.apps.OrdersConfig',
+
+    # Allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    # crispy forms
+    'crispy_forms',
+    # COuntries
 ]
 
 MIDDLEWARE = [
@@ -53,10 +65,19 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.request',
+                # new
+                'cart.context_processors.cart',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+)
+SITE_ID = 1
 
 WSGI_APPLICATION = 'myshop.wsgi.application'
 
@@ -114,3 +135,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staic_root')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_root')
 
+LOGIN_REDIRECT_URL = '/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+CART_SESSION_ID = 'cart'

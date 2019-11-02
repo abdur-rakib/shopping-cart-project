@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block title %}Your Shopping Cart {% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-md-8 offset-2">
+    <h3 class="text-center mt-3 mdb-color-text lighten-3">Your Shopping Cart({{ cart|length }})</h3>
+    {% if not cart %}
+    <h5 class="text-center mt-5">Your cart is empty</h5>
+    <p class="text-center">
+      <a href="{% url 'shop:product_list' %}" class="btn-warning btn">Continue Shopping</a>
+    </p>
+    {% else %}
+    <table class="table table-sm table-striped">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Remove</th>
+          <th>Unit Price</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in cart %}
+        {% with product=item.product %}
+        <tr>
+          <td class="align-middle">{{ product.name }}</td>
+          <td>
+            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+              <div class="row">
+                <div class="col-md-3 mt-2">
+                  {{ item.update_quantity_form.quantity|as_crispy_field }}
+                  {{ item.update_quantity_form.update }}
+                </div>
+                <div class="col-md-6">
+                  <input type="submit" class="btn btn-md btn-mdb-color lighten-3" value="Update">
+                  {% csrf_token %}
+                </div>
+              </div>
+            </form>
+          </td>
+          <td class="align-middle"><a href="{% url "cart:cart_remove" product.id %}" class="text-danger h6">Remove</a></td>
+          <td class="align-middle">${{ item.price }}</td>
+          <td class="align-middle">${{ item.total_price }}</td>
+        </tr>
+        {% endwith %}
+        {% endfor %}
+        <tr class="total">
+          <td>Total</td>
+          <td colspan="3"></td>
+          <td class="num">${{ cart.get_total_price }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="text-right">
+      <a href="{% url 'shop:product_list' %}" class="btn-warning btn">Continue Shopping</a>
+      <a href="#" class="btn btn-mdb-color lighten-3">Checkout</a>
+    </p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
