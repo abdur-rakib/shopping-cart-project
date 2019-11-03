@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
+{% load static %}
 {% block title %}My Shop - {{ product.name }} {% endblock %}
 {% block content %}
 <!--Main layout-->
@@ -72,7 +73,92 @@
 
     </div>
     <!--Grid row-->
+    <hr>
 
+    <!--Grid row-->
+    <div class="row d-flex justify-content-center wow fadeIn">
+
+      <!--Grid column-->
+      <div class="col-md-6 text-center">
+
+        <h4 class="my-4 h4">Simillar Products</h4>
+
+        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus suscipit modi sapiente illo soluta odit
+          voluptates,
+          quibusdam officia. Neque quibusdam quas a quis porro? Molestias illo neque eum in laborum.</p> -->
+
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+
+    <!--Grid row-->
+    <div class="row wow fadeIn justify-content-center">
+      {% for product in products %}
+      <!--Grid column-->
+      <div class="col-lg-4 col-md-12 mb-4 text-center">
+        <div class="">
+          <img src="{{ product.image.url }}" class="img-fluid" alt="" style="height: 250px;">
+          <a href="{{ product.get_absolute_url }}">
+            <p class="dark-grey-text lead">{{ product.name }}</p>
+          </a>
+          <a class="mdb-color-text font-weight-bold lighten-3">${{ product.price }}</a>
+        </div>
+      </div>
+      <!--Grid column-->
+      {% endfor %}
+    </div>
+    <!--Grid row-->
+    <!--Grid row-->
+    <hr>
+
+    <!--Grid row-->
+    <div class="row d-flex wow fadeIn">
+
+      <!--Grid column-->
+      <div class="col-md-5">
+
+        <h4 class="h3 ">Reviews about this product</h4>
+        <hr class="w-75 float-left">
+      </div>
+      <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+    <div class="row wow fadeIn ">
+      <!--Grid column-->
+      <div class="col-lg-8 col-md-12 mb-4 ">
+        {% for comment in product.comments.all %}
+        <div class="border p-3 my-3">
+          <img class="img-fluid rounded-circle border border-success mr-2" style="height: 40px;" src="{% static 'img/person.jpg' %}" alt="">
+            <strong class="border-bottom mb-2">{{ comment.author }}</strong>
+          <p class="text-sm mt-2">{{ comment.created|timesince }} ago</p>
+          <p> - {{ comment.content }}</p>
+        </div>
+        {% empty %}
+        <p>No comments here yet 🙂</p>
+        {% endfor %}
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+     <!--Grid row-->
+     <div class="row wow fadeIn ">
+        <!--Grid column-->
+        <div class="col-lg-8 col-md-12 mb-4 ">
+          <h4>Please write a comment</h4>
+          <form action="." method="POST">
+            {{ comment_form|crispy }}
+            {% csrf_token %}
+            <div class="float-right">
+              <input type="submit" class="btn btn-md btn-mdb-color lighten-3" value="Post a comment">
+            </div>
+          </form>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
   </div>
 </main>
 <!--Main layout-->

@@ -39,3 +39,13 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse('shop:product_detail', args=[self.id, self.slug])
+    
+class Comment(models.Model):
+    author = models.CharField(max_length=20)
+    product = models.ForeignKey(Product, related_name='comments', on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    content = models.TextField(max_length=100)
+    active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return 'Comment by {}'.format(self.author)
