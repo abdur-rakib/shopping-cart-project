@@ -49,15 +49,15 @@
         {% endwith %}
         {% endfor %}
         <tr class="total">
-          <td>Total</td>
+          <td class="font-weight-bold">Total</td>
           <td colspan="3"></td>
-          <td class="num">${{ cart.get_total_price }}</td>
+          <td class="font-weight-bold">${{ cart.get_total_price }}</td>
         </tr>
       </tbody>
     </table>
     <p class="text-right">
       <a href="{% url 'shop:product_list' %}" class="btn-warning btn">Continue Shopping</a>
-      <a href="#" class="btn btn-mdb-color lighten-3">Checkout</a>
+      <a href="{% url 'orders:order_create'%}" class="btn btn-mdb-color lighten-3">Checkout</a>
     </p>
     {% endif %}
   </div>

@@ -70,7 +70,7 @@
             <!--Card content-->
             <div class="card-body text-center">
               <!--Category & Title-->
-              <a href="{{ product.category.get_absolute_url }}" class="grey-text">
+              <a href="{{ product.category.get_absolute_url }}" class="">
                 <h5>{{ product.category }}</h5>
               </a>
               <h5>
@@ -83,9 +83,9 @@
 
               <h4 class="font-weight-bold blue-text">
                 {% if product.discount_price %}
-                <strong>{{ product.discount_price }}$</strong>
+                <strong class="mdb-color-text lighten-3">{{ product.discount_price }}$</strong>
                 {% else %}
-                <strong>{{ product.price }}$</strong>
+                <strong class="mdb-color-text lighten-3">{{ product.price }}$</strong>
                 {% endif %}
               </h4>
 
