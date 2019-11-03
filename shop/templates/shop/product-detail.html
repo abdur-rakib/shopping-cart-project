@@ -133,7 +133,7 @@
         <div class="border p-3 my-3">
           <img class="img-fluid rounded-circle border border-success mr-2" style="height: 40px;" src="{% static 'img/person.jpg' %}" alt="">
             <strong class="border-bottom mb-2">{{ comment.author }}</strong>
-          <p class="text-sm mt-2">{{ comment.created|timesince }} ago</p>
+          <p class="text-sm mt-2" style="font-size: 12px;">{{ comment.created|timesince }} ago</p>
           <p> - {{ comment.content }}</p>
         </div>
         {% empty %}

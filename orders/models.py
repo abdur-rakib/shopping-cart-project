@@ -12,6 +12,7 @@ class Order(models.Model):
     postal_code = models.CharField(max_length=20)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    braintree_id = models.CharField(max_length=150, blank=True)
     paid = models.BooleanField(default=False)
 
     class Meta:
@@ -32,5 +33,5 @@ class OrderItem(models.Model):
         return '{}'.format(self.id)
 
     def get_cost(self):
-        return self.price * self*qunatity
+        return self.price * self.quantity
     

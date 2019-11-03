@@ -1,3 +1,4 @@
+from braintree import Configuration,	Environment
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -30,6 +31,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
+    'payment.apps.PaymentConfig',
 
     # Allauth
     'django.contrib.sites',
@@ -141,3 +143,23 @@ LOGIN_REDIRECT_URL = '/'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 CART_SESSION_ID = 'cart'
+
+
+BRAINTREE_PUBLIC_KEY = 'p2js8byhdr9ht6bj'
+BRAINTREE_PRIVATE_KEY = '9b8aa42ac83820c12a8650974323e576'
+BRAINTREE_MERCHANT_ID = 'szw9j2mr28nnw9c7'
+
+Configuration.configure(
+    Environment.Sandbox,
+    BRAINTREE_MERCHANT_ID,
+    BRAINTREE_PUBLIC_KEY,
+    BRAINTREE_PRIVATE_KEY
+)
+
+
+# E-mail 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'abdurrakib961@gmail.com'
+EMAIL_HOST_PASSWORD = 'rakibabdurcse16'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
