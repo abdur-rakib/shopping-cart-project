@@ -31,7 +31,7 @@
           <td>
             <form action="{% url 'cart:cart_add' product.id %}" method="post">
               <div class="row">
-                <div class="col-md-3 mt-2">
+                <div class="col-md-4 mt-2">
                   {{ item.update_quantity_form.quantity|as_crispy_field }}
                   {{ item.update_quantity_form.update }}
                 </div>
@@ -48,17 +48,44 @@
         </tr>
         {% endwith %}
         {% endfor %}
+        {% if cart.coupon %}
+        <tr class="total">
+          <td class="font-weight-light">Subtotal</td>
+          <td colspan="3"></td>
+          <td class="font-weight-light">${{ cart.get_total_price|floatformat:"2" }}</td>
+        </tr>
+        <tr>
+          <td>
+            "{{ cart.coupon.code }}" coupon
+            ({{ cart.coupon.discount }}% off)
+          </td>
+          <td colspan="3"></td>
+          <td> - ${{ cart.get_discount|floatformat:"2" }}</td>
+        </tr>
+        {% endif %}
         <tr class="total">
           <td class="font-weight-bold">Total</td>
           <td colspan="3"></td>
-          <td class="font-weight-bold">${{ cart.get_total_price }}</td>
+          <td class="font-weight-bold">${{ cart.get_total_price_after_discount|floatformat:"2" }}</td>
         </tr>
       </tbody>
     </table>
-    <p class="text-right">
-      <a href="{% url 'shop:product_list' %}" class="btn-warning btn">Continue Shopping</a>
-      <a href="{% url 'orders:order_create'%}" class="btn btn-mdb-color lighten-3">Checkout</a>
-    </p>
+    <div class="row">
+      <div class="col-md-4 mr-auto">
+        <p>Apply a coupon:</p>
+        <form action="{% url 'coupons:apply' %}" method="POST">
+          {{ coupon_apply_form|crispy }}
+          {% csrf_token %}
+          <input type="submit" class="btn btn-primary" value="apply">
+        </form>
+      </div>
+      <div class="col-md-6 mt-4">
+        <p class="">
+          <a href="{% url 'shop:product_list' %}" class="btn-warning btn">Continue Shopping</a>
+          <a href="{% url 'orders:order_create'%}" class="btn btn-mdb-color lighten-3">Checkout</a>
+        </p>
+      </div>
+    </div>
     {% endif %}
   </div>
 </div>
