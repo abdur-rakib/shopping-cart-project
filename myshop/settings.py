@@ -160,7 +160,7 @@ Configuration.configure(
 
 # E-mail 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'abdurrakib961@gmail.com'
-EMAIL_HOST_PASSWORD = 'rakibabdurcse16'
+EMAIL_HOST_USER = 'your mail'
+EMAIL_HOST_PASSWORD = 'your password'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
