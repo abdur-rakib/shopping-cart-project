@@ -9,7 +9,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ck+pt@0boace-^cy=)t5m!c%g@b@fx(oqlx^6f67#u3@ph$6$q'
+SECRET_KEY = 'Your Key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -146,9 +146,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 CART_SESSION_ID = 'cart'
 
 
-BRAINTREE_PUBLIC_KEY = 'p2js8byhdr9ht6bj'
-BRAINTREE_PRIVATE_KEY = '9b8aa42ac83820c12a8650974323e576'
-BRAINTREE_MERCHANT_ID = 'szw9j2mr28nnw9c7'
+BRAINTREE_PUBLIC_KEY = 'Your Key'
+BRAINTREE_PRIVATE_KEY = 'Your Key'
+BRAINTREE_MERCHANT_ID = 'Your Key'
 
 Configuration.configure(
     Environment.Sandbox,
