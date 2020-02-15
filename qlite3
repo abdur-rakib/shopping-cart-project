@@ -1,0 +1,77 @@
+[33mcommit 1d590e25bf4a520afb41dfe2db67736314eff7f1[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Abdur Rakib <43021476+RakibWebDeveloper@users.noreply.github.com>
+Date:   Mon Feb 3 11:45:11 2020 +0600
+
+    Update settings.py
+
+[33mcommit 336d5e85bd3c552b1ebb25338e4be4f8aa74066a[m
+Author: Abdur Rakib <43021476+RakibWebDeveloper@users.noreply.github.com>
+Date:   Fri Nov 15 10:24:27 2019 +0600
+
+    Update settings.py
+
+[33mcommit af19d38570356eff0eccb8f6d82c7d06c416b0fb[m
+Author: Abdur Rakib <43021476+RakibWebDeveloper@users.noreply.github.com>
+Date:   Sun Nov 10 10:27:40 2019 +0600
+
+    Update README.md
+
+[33mcommit 8abdd244e76c9c2a7f896610cb030afc90ab3245[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Sat Nov 9 08:29:45 2019 +0600
+
+    somthing
+
+[33mcommit 94fea21c6b8a1856043ea754a6699d2eb44dc385[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Sat Nov 9 01:04:15 2019 +0600
+
+    aa
+
+[33mcommit 17dd0f47a2ba80fb20cdc8e68c2a7ae4d146c124[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Fri Nov 8 23:43:27 2019 +0600
+
+    Added coupon system
+
+[33mcommit fdbc4931301ba3eb55afea0832e01158dcae5324[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Sun Nov 3 21:55:03 2019 +0600
+
+    Added payment system
+
+[33mcommit c705b831c4ae0ccdb06964a58b703321d017732f[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Sun Nov 3 17:40:40 2019 +0600
+
+    Comment system added
+
+[33mcommit 7eba15158111d735ce9dadb6c130676141d65640[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Sun Nov 3 13:32:41 2019 +0600
+
+    Added order system
+
+[33mcommit b8a84bc935d5b3638d9a621522f476c936839e8c[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Sat Nov 2 21:19:16 2019 +0600
+
+    Added cart system
+
+[33mcommit f3b2b8168e9d340c7ed4ec3713799082eaa36764[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Thu Oct 31 21:16:43 2019 +0600
+
+    Added pagination system
+
+[33mcommit da7f3978ef90d9c69e35d96b2b160908e78f9ca5[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Thu Oct 31 17:43:49 2019 +0600
+
+    Added product_list and product_detail
+
+[33mcommit e856caf19407122f9a256212d7cafbc33fa46968[m
+Author: RakibWebDeveloper <abdurrakib961@gmail.com>
+Date:   Thu Oct 31 15:00:48 2019 +0600
+
+    Initial Commit
